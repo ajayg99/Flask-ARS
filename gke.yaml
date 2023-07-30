@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gcp-devops
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gcp-ars
+  template:
+    metadata:
+      labels:
+        app: gcp-ars
+    spec:
+      containers:
+        - name: gcp-devops
+          image: gcr.io/devops-394318/devops:latest
+          ports:
+            - containerPort: 5000
+            env:
+              - name: PORT
+                value: "5000"
