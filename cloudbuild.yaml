@@ -9,11 +9,11 @@ steps:
     args: ['push', 'gcr.io/$PROJECT_ID/devops']
 
   # deploy container image to GKE
-- name: "gcr.io/cloud-builders/gke-deploy"
-  args:
-  - run
-  - --filename=gke.yml
-  - --image=gcr.io/$PROJECT_ID/devops
-  - --location=us-central1-c
-  - --cluster=cluster=devops-c
-  - --namespace=devops-prod
+  - name: "gcr.io/cloud-builders/gke-deploy"
+    args:
+    - run
+    - --filename=gke.yml
+    - --image=gcr.io/$PROJECT_ID/devops
+    - --location=us-central1-c
+    - --cluster=cluster=devops-c
+    - --namespace=devops-prod
