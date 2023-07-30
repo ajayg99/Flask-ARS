@@ -17,6 +17,6 @@ spec:
           image: gcr.io/devops-394318/devops:latest
           ports:
             - containerPort: 5000
-            env:
-              - name: PORT
-                value: "5000"
+          env:
+            - name: PORT
+              value: "5000"
